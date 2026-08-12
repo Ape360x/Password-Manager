@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  height: 100%;
+}
+
+body {
+  @apply bg-base text-ink font-body antialiased;
+}
+
+::selection {
+  background: rgba(201, 162, 39, 0.35);
+}
+
+/* Visible keyboard focus everywhere, styled to match the brass accent */
+:focus-visible {
+  outline: 2px solid #C9A227;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.blueprint-bg {
+  background-color: #12151C;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #2A3141;
+  border-radius: 8px;
+}
+
+.input {
+  @apply w-full bg-panel2 border border-line rounded-md px-3 py-2 text-sm text-ink placeholder-steel/50 focus:border-brass outline-none transition-colors;
+}
